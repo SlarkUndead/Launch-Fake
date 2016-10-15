@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="(version)" />
+    <None Include="Launch.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

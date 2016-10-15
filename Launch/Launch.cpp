@@ -31,8 +31,17 @@ string getClientVersion() { // Get client version
 	return v[0];
 }
 
+/*
+auto getINIsettings() {
+TCHAR szExeFileName[MAX_PATH];
+string fname;
+fname = GetModuleFileName(NULL, szExeFileName, MAX_PATH);
+}
+*/
+
 int main()
 {
+
 	cout << getClientVersion() << endl;
 
 	system("pause");
