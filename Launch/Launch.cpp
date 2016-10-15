@@ -8,35 +8,33 @@
 */
 
 #include "stdafx.h"
-#include <iostream>
-#include <fstream>
-#include <string>
 
-using namespace std;
+std::vector<std::string> explode(std::string const & s, char delim) // Function explode
+{
+	std::vector<std::string> result;
+	std::istringstream iss(s);
 
-string getClientVersion() {
-	string file;
-	file = "(version)";
+	for (std::string token; std::getline(iss, token, delim); )
+	{
+		result.push_back(std::move(token));
+	}
 
-	char data[100];
-
-	ifstream v;
-	v.open(file);
-	v >> data;
-	//cout << data;
-	v.close();
-
-	return file;
+	return result;
 }
+
+string getClientVersion() { // Get client version
+	
+	std::ifstream vfile("(version)");
+	std::string fline;
+	std::getline(vfile, fline);// Get first line content
+	auto v = explode(fline, '|');
+	return v[0];
+}
+
 int main()
 {
-	ofstream myfile("(version)");
-	if (myfile.is_open())
-	{
-		cout << "fsf";
-		myfile.close();
-	}
-	else cout << "Unable to open file";
+	cout << getClientVersion() << endl;
+
 	system("pause");
 	return 0;
 }

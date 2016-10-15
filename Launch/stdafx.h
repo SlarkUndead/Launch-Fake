@@ -9,6 +9,15 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <regex>
+#include <vector>
+#include <sstream>
+#include <utility>
+
+using namespace std;
 
 
 
