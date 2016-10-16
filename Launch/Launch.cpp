@@ -61,7 +61,7 @@ string getClientVersion() {
 /*
 * Get Launch Settings
 */
-string getINIsettings(string setting) {
+string getINIsettings(string setting, string df="") {
 
 	INIReader reader("Launch.ini");
 
@@ -70,7 +70,7 @@ string getINIsettings(string setting) {
 		return NULL;
 	}
 
-	return reader.Get("Launch", setting, "");
+	return reader.Get("Launch", setting, df);
 
 }
 
@@ -79,6 +79,7 @@ string getINIsettings(string setting) {
 */
 int updatePatchFolder() {
 	cout << getINIsettings("ChoiceURL") << endl;
+	//system(".\\Bin\\Game.exe -fl");
 	return 0;
 }
 
@@ -91,6 +92,6 @@ int main()
 	} catch (invalid_argument& e) {
 		cerr << e.what() << endl;
 	}
-	system("pause");
+	//system("pause");
 	return 0;
 }
