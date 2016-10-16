@@ -74,12 +74,19 @@ string getINIsettings(string setting) {
 
 }
 
+/*
+* Update Patch folder
+*/
+int updatePatchFolder() {
+	cout << getINIsettings("ChoiceURL") << endl;
+	return 0;
+}
 
 int main()
 {
 	try {
 
-		cout << getINIsettings("ChoiceURL") << endl;
+		updatePatchFolder();
 
 	} catch (invalid_argument& e) {
 		cerr << e.what() << endl;
